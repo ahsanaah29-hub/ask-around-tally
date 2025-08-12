@@ -724,8 +724,8 @@
         <div class="user-header">
     <div class="user-title">User Mode</div>
     <div class="user-actions">
-        <button class="btn" onclick="showChangeUserPassword()">Change Password</button>
-        <button class="btn logout-btn" onclick="logout()">Logout</button>
+        <button onclick="changePassword()">Change Password</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 </div>
         
@@ -784,8 +784,7 @@
                 <label for="user-new-repassword">Re-enter new password</label>
                 <input type="password" id="user-new-repassword">
             </div>
-            <button class="btn" onclick="changeUserPassword()">Save</button>
-        </div>
+           
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
