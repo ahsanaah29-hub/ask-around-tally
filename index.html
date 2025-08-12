@@ -19,7 +19,7 @@
 
         /* Common Button Styles */
         .btn {
-            background-color: #5B9BD5;
+            background-color: #5B9BD5; /* Day Sky Blue */
             color: white;
             font-size: 12px;
             font-weight: bold;
@@ -36,7 +36,7 @@
 
         /* Header Styles */
         .header {
-            background-color: #003366;
+            background-color: #003366; /* Earth Blue */
             color: white;
             font-size: 18px;
             font-weight: bold;
@@ -52,6 +52,8 @@
             font-size: 24px;
             margin-right: 10px;
         }
+
+        
 
         /* Login Page Styles */
         .login-container {
@@ -99,8 +101,13 @@
             font-size: 14px;
         }
 
+        .form-group textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
         .error-message {
-            color: #DC143C;
+            color: #DC143C; /* Love Red */
             font-size: 12px;
             margin-top: 5px;
         }
@@ -111,7 +118,7 @@
         }
 
         .admin-header {
-            background-color: #FFF8DC;
+            background-color: #FFF8DC; /* Cyan Blue */
             color: #444444;
             font-size: 16px;
             font-weight: bold;
@@ -126,7 +133,7 @@
 
         .sidebar {
             width: 13%;
-            background-color: #F8F8FF;
+            background-color: #F8F8FF; /* Pearl White */
             padding: 20px 0;
             min-height: calc(100vh - 60px);
         }
@@ -137,25 +144,24 @@
             padding: 12px 15px;
             background: none;
             border: none;
-            color: #003366;
+            color: #003366; /* Earth Blue */
             font-size: 12px;
             cursor: pointer;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
 		
-        .menu-item.logout {
-            background-color: #DC143C;
-            color: white;
-        }
+		.menu-item.logout {																			background-color: #DC143C; /* Love Red */
+			color: white;
+		}
 
-        .menu-item.logout:hover {
-            background-color: #ff4d4d;
-        }
+		.menu-item.logout:hover {																	background-color: #ff4d4d;
+		}
 
         .menu-item:hover, .menu-item.active {
-            background-color: #F0FFFF;
+            background-color: #F0FFFF; /* White Ice */
         }
+		
 
         .main-content {
             flex: 1;
@@ -164,33 +170,12 @@
             overflow-y: auto;
         }
 
-        /* Updated Content Header for User Mode */
         .content-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            color: #003366;
             font-size: 15px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #003366;
-        }
-
-        .header-actions {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            gap: 10px;
-        }
-
-        .logout-btn {
-            background-color: #DC143C;
-        }
-
-        .logout-btn:hover {
-            background-color: #ff4d4d;
+            text-align: center;
         }
 
         /* Question Answer Section */
@@ -306,12 +291,27 @@
         }
 
         .user-header {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #1E90FF;
+           display: flex;
+           justify-content: center; /* Center the title */
+           align-items: center;
+           position: relative; /* Allow absolute positioning for actions */
+           font-size: 18px;
+           font-weight: bold;
+           margin-bottom: 20px;
+           color: #1E90FF;
         }
+
+        .user-title {
+           text-align: center;
+        }
+
+        .user-actions {
+           position: absolute;
+           right: 0;
+           display: flex;
+           gap: 10px;
+        }
+        
 
         .suggestion-box {
             margin-top: 20px;
@@ -464,9 +464,8 @@
 		.logout-btn:hover {
 			background-color: #ff4d4d; /* Matching admin logout hover */
 		}
-/* Other styles untouched */
-        /* ... rest of your original CSS stays unchanged ... */
-  </style>
+
+    </style>
 </head>
 <body>
     <div class="header">
@@ -495,16 +494,7 @@
         </div>
     </div>
 
-    <div id="user-page" class="user-container">
-        <!-- Updated header section -->
-        <div class="content-header">
-            <span>User Mode</span>
-            <div class="header-actions">
-                <button class="btn">Change Password</button>
-                <button class="btn logout-btn">Logout</button>
-            </div>
-        </div>
-        <div id="admin-page" class="admin-container">
+    <div id="admin-page" class="admin-container">
         <div class="admin-header">Admin Page</div>
         <div class="admin-content">
             <div class="sidebar">
@@ -731,9 +721,13 @@
     </div>
 
     <div id="user-page" class="user-container">
-        <div class="user-header">													<span>User Mode</span>
-		<button class="btn logout-btn" onclick="logout()">Logout</button>
-	</div>
+        <div class="user-header">
+    <div class="user-title">User Mode</div>
+    <div class="user-actions">
+        <button class="btn" onclick="showChangeUserPassword()">Change Password</button>
+        <button class="btn logout-btn" onclick="logout()">Logout</button>
+    </div>
+</div>
         
         <div class="qa-buttons">
             <button class="btn" onclick="setUserMode('ask')">Ask</button>
@@ -2599,4 +2593,3 @@
 </script>
 </body>
 </html>
-
