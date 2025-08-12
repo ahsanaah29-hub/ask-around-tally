@@ -465,7 +465,9 @@
 			background-color: #ff4d4d; /* Matching admin logout hover */
 		}
 
+
     </style>
+	<button onclick="showChangeUserPassword()">Change Password</button>
 </head>
 <body>
     <div class="header">
@@ -762,30 +764,26 @@
             <button class="btn" id="user-update-btn" onclick="updateUserAnswer()" style="display:none;">Update</button>
         </div>
         
-        <div style="margin-top: 20px;">
-            <a href="#" onclick="showChangeUserPassword()">Change User Password</a>
-        </div>
-        
         <div id="change-user-password" class="hidden" style="margin-top: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
-            <h4>Change Password</h4>
-            <div class="form-group">
-                <label for="user-current-id">Enter your UID</label>
-                <input type="text" id="user-current-id">
-            </div>
-            <div class="form-group">
-                <label for="user-current-password">Enter current password</label>
-                <input type="password" id="user-current-password">
-            </div>
-            <div class="form-group">
-                <label for="user-new-password">Enter new password</label>
-                <input type="password" id="user-new-password">
-            </div>
-            <div class="form-group">
-                <label for="user-new-repassword">Re-enter new password</label>
-                <input type="password" id="user-new-repassword">
-            </div>
-           
+    <h4>Change Password</h4>
+    <div class="form-group">
+        <label for="user-current-id">Enter your UID</label>
+        <input type="text" id="user-current-id">
     </div>
+    <div class="form-group">
+        <label for="user-current-password">Enter current password</label>
+        <input type="password" id="user-current-password">
+    </div>
+    <div class="form-group">
+        <label for="user-new-password">Enter new password</label>
+        <input type="password" id="user-new-password">
+    </div>
+    <div class="form-group">
+        <label for="user-new-repassword">Re-enter new password</label>
+        <input type="password" id="user-new-repassword">
+    </div>
+           
+ </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
