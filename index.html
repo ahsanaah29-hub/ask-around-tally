@@ -2586,6 +2586,38 @@
 			}
 			appState.settings = data; // now has .id, .showUserList, etc.
 		}
+		<script>
+    function showChangeUserPassword() {
+        const section = document.getElementById('change-user-password');
+        section.classList.toggle('hidden');
+    }
+
+    async function changeUserPassword() {
+        const userId = document.getElementById('user-current-id').value.toLowerCase().trim();
+        const currentPassword = document.getElementById('user-current-password').value;
+        const newPassword = document.getElementById('user-new-password').value;
+        const reNewPassword = document.getElementById('user-new-repassword').value;
+        
+        if (!userId || !currentPassword || !newPassword || !reNewPassword) {
+            alert('Please fill all fields');
+            return;
+        }
+        
+        if (newPassword !== reNewPassword) {
+            alert('New passwords do not match');
+            return;
+        }
+
+        // Your password change API call or logic goes here
+        alert("Password change request submitted!");
+    }
+
+    function logout() {
+        // Your logout logic here
+        alert("Logging out...");
+    }
+</script>
+
 
 </script>
 </body>
